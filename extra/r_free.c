@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprint.h                                       :+:      :+:    :+:   */
+/*   r_free.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpedrosa <rpedrosa@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 16:44:52 by rpedrosa          #+#    #+#             */
-/*   Updated: 2024/11/06 16:47:43 by rpedrosa         ###   ########.fr       */
+/*   Created: 2024/11/25 14:11:03 by rpedrosa          #+#    #+#             */
+/*   Updated: 2024/11/25 14:12:30 by rpedrosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "extra.h"
 
-# include "../libft.h"
-# include <stdarg.h>
-
-int	ft_printf(const char *format, ...);
-int	r_putnbr(int n);
-int	r_put_hex(unsigned int n, char c);
-int	r_putstr(char *s);
-int	r_putunsig(unsigned int n);
-int	r_put_ptr(unsigned long long n);
-
-#endif
+void	r_free(char **ptr)
+{
+	if (*ptr)
+	{
+		free(*ptr);
+		*ptr = NULL;
+	}
+}

@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   r_free.c                                           :+:      :+:    :+:   */
+/*   r_putnbr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpedrosa <rpedrosa@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/25 14:11:03 by rpedrosa          #+#    #+#             */
-/*   Updated: 2024/11/25 14:12:30 by rpedrosa         ###   ########.fr       */
+/*   Created: 2024/11/07 16:33:10 by rpedrosa          #+#    #+#             */
+/*   Updated: 2024/11/07 16:42:14 by rpedrosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "extra.h"
 
-void	r_free(char **ptr)
+int	r_putnbr(int n)
 {
-	if (*ptr)
-	{
-		free(*ptr);
-		*ptr = NULL;
-	}
+	char	*s;
+	int		r;
+
+	s = ft_itoa(n);
+	r = r_putstr(s);
+	free(s);
+	return (r);
 }
