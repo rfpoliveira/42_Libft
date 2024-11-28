@@ -12,7 +12,7 @@
 
 #include"../libft.h"
 
-char	*r_matrix_free(char	**s)
+void	*r_matrix_free(char	**s)
 {
 	int	i;
 
