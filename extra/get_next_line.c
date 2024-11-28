@@ -12,12 +12,6 @@
 
 #include "extra.h"
 
-static void	r_free(char **ptr)
-{
-	free(*ptr);
-	*ptr = NULL;
-}
-
 static char	*fill_buff(int fd, char *buff, char *rest)
 {
 	char	*tmp;
@@ -33,9 +27,9 @@ static char	*fill_buff(int fd, char *buff, char *rest)
 			break ;
 		buff[i] = '\0';
 		if (!rest)
-			rest = r_strdup("");
+			rest = ft_strdup("");
 		tmp = rest;
-		rest = r_strjoin(tmp, buff);
+		rest = ft_strjoin(tmp, buff);
 		r_free(&tmp);
 		if (r_strchr(buff, '\n'))
 			break ;
@@ -53,7 +47,7 @@ static char	*true_line(char	*line)
 		i++;
 	if (!line[i] || !line[1])
 		return (NULL);
-	rest = r_substr(line, i + 1, r_strlen(line) - i);
+	rest = ft_substr(line, i + 1, ft_strlen(line) - i);
 	if (!*rest)
 		r_free(&rest);
 	line[i + 1] = '\0';
