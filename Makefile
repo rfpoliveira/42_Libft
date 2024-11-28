@@ -21,7 +21,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c f
 	  ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
 
 EXTRA_SRCS = $(addprefix $(EXTRA_PATH)/, ft_printf.c r_put_hex.c r_putnbr.c r_put_ptr.c r_putstr.c r_putunsig.c  get_next_line.c get_next_line_fd.c \
-			 r_free.c r_matrix_free.c)
+			 r_free.c )
 
 BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 			 ft_lstclear.c ft_lstiter.c ft_lstmap.c
