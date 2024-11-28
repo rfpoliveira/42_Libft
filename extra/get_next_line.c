@@ -31,7 +31,7 @@ static char	*fill_buff(int fd, char *buff, char *rest)
 		tmp = rest;
 		rest = ft_strjoin(tmp, buff);
 		r_free(&tmp);
-		if (r_strchr(buff, '\n'))
+		if (ft_strchr(buff, '\n'))
 			break ;
 	}
 	return (rest);
