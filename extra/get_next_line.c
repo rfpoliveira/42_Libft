@@ -10,7 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "extra.h"
+#include "get_next_line.h"
+
+static void	r_free(char **ptr)
+{
+	free(*ptr);
+	*ptr = NULL;
+}
 
 static char	*fill_buff(int fd, char *buff, char *rest)
 {
@@ -27,11 +33,11 @@ static char	*fill_buff(int fd, char *buff, char *rest)
 			break ;
 		buff[i] = '\0';
 		if (!rest)
-			rest = ft_strdup("");
+			rest = r_strdup("");
 		tmp = rest;
-		rest = ft_strjoin(tmp, buff);
+		rest = r_strjoin(tmp, buff);
 		r_free(&tmp);
-		if (ft_strchr(buff, '\n'))
+		if (r_strchr(buff, '\n'))
 			break ;
 	}
 	return (rest);
@@ -47,7 +53,7 @@ static char	*true_line(char	*line)
 		i++;
 	if (!line[i] || !line[1])
 		return (NULL);
-	rest = ft_substr(line, i + 1, ft_strlen(line) - i);
+	rest = r_substr(line, i + 1, r_strlen(line) - i);
 	if (!*rest)
 		r_free(&rest);
 	line[i + 1] = '\0';
