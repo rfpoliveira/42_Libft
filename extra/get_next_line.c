@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "extra.h"
 
 static void	r_free(char **ptr)
 {
