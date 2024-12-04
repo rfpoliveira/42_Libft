@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprint.h                                       :+:      :+:    :+:   */
+/*   matrix_free.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpedrosa <rpedrosa@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 16:44:52 by rpedrosa          #+#    #+#             */
-/*   Updated: 2024/11/06 16:47:43 by rpedrosa         ###   ########.fr       */
+/*   Created: 2024/12/04 11:21:32 by rpedrosa          #+#    #+#             */
+/*   Updated: 2024/12/04 11:27:49 by rpedrosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "so_long.h"
 
-# include "../libft.h"
-# include <stdarg.h>
+void  matrix_free(char **mtx)
+{
+	int	i;
 
-int	ft_printf(const char *format, ...);
-int	r_putnbr(int n);
-int	r_put_hex(unsigned int n, char c);
-int	r_putstr(char *s);
-int	r_putunsig(unsigned int n);
-int	r_put_ptr(unsigned long long n);
-char	*get_next_line(int fd);
-char	*get_next_line_fd(int fd);
-void	r_free(char **ptr);
-void  matrix_free(char **mtx):
-
-#endif
+	i = 0;
+	while (mtx[i])
+		free(mtx[i++]);
+	free(mtx);
+}
+/*
+int	main (void)
+{
+	char **map = create_matrix("maps/test.ber");
+	matrix_free(map);
+}*/
