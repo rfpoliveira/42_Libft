@@ -79,5 +79,4 @@ char	*get_next_line(int fd);
 char	*get_next_line_fd(int fd);
 void	r_free(char **ptr);
 
-
 #endif

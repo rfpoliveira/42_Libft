@@ -12,7 +12,7 @@
 
 #include "extra.h"
 
-void  matrix_free(char **mtx)
+void	matrix_free(char **mtx)
 {
 	int	i;
 
@@ -21,9 +21,3 @@ void  matrix_free(char **mtx)
 		free(mtx[i++]);
 	free(mtx);
 }
-/*
-int	main (void)
-{
-	char **map = create_matrix("maps/test.ber");
-	matrix_free(map);
-}*/
