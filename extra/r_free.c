@@ -12,7 +12,7 @@
 
 #include "extra.h"
 
-void	r_free(char **ptr)
+void	r_free(void **ptr)
 {
 	if (*ptr)
 	{
