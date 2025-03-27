@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   matrix_free.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpedrosa <rpedrosa@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: rpedrosa <rpedrosa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 11:21:32 by rpedrosa          #+#    #+#             */
-/*   Updated: 2025/03/20 16:10:56 by rpedrosa         ###   ########.fr       */
+/*   Updated: 2025/03/27 16:46:07 by rpedrosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void	matrix_free(char **mtx)
 	if (mtx == NULL)
 		return ;
 	while (mtx[i])
-		free(mtx[i++]);
-	free(mtx);
+		r_free(&mtx[i++]);
+	r_free(&mtx);
 }
