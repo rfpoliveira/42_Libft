@@ -6,7 +6,7 @@
 /*   By: rpedrosa <rpedrosa@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 11:21:32 by rpedrosa          #+#    #+#             */
-/*   Updated: 2025/06/16 11:48:44 by rpedrosa         ###   ########.fr       */
+/*   Updated: 2025/06/16 11:57:50 by rpedrosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ void	matrix_free(char **mtx)
 	if (mtx == NULL)
 		return ;
 	while (mtx[i])
-		free(mtx[i++]);
+	{
+		r_free(mtx[i]);
+		i++;
+	}
 	free(mtx);
 	mtx = NULL;
 }
