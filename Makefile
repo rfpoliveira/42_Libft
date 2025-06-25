@@ -44,7 +44,7 @@ BUILD_PATH = .build
 
 RM = rm -rf
 AR = ar rcs
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -g -Wall -Werror -Wextra
 
 #==============================================================================#
 #                                    Rules                                     #
